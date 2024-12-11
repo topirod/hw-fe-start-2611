@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(to right, #ece9e6, #ffffff);
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 10px 0;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .portfolio-section {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .portfolio-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .portfolio-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin: 15px 0;
+            padding: 0 10px;
+        }
+
+        .card p {
+            padding: 0 10px;
+            color: #777;
+        }
+
+        .card button {
+            background-color: #6c63ff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .card button:hover {
+            background-color: #5753cc;
+        }
+
+        .cta-section {
+            background: #2d2d2d;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-section button {
+            background-color: #6c63ff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-section button:hover {
+            background-color: #5753cc;
+        }
+
+        footer {
+            background: #121212;
+            color: #aaa;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Hello, I’m Rana Noman</h1>
+    <p>I’m a Frontend Web Developer and Creative Coder based in Manchester. I design and build beautifully simple websites.</p>
+</header>
+
+<div class="container">
+    <section class="portfolio-section">
+        <h2>Portfolio</h2>
+        <p>Here are some of my recent projects. Check them out!</p>
+        <div class="portfolio-cards">
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200" alt="Project 1">
+                <h3>Project 1</h3>
+                <p>Description of the project.</p>
+                <button>View Details</button>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200" alt="Project 2">
+                <h3>Project 2</h3>
+                <p>Description of the project.</p>
+                <button>View Details</button>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200" alt="Project 3">
+                <h3>Project 3</h3>
+                <p>Description of the project.</p>
+                <button>View Details</button>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200" alt="Project 4">
+                <h3>Project 4</h3>
+                <p>Description of the project.</p>
+                <button>View Details</button>
+            </div>
+        </div>
+    </section>
+</div>
+
+<section class="cta-section">
+    <h2>Do you have a Project Idea? Let’s discuss your project!</h2>
+    <button>Contact Me</button>
+</section>
+
+<footer>
+    <p>Created by Rana Noman | Copyright &copy; 2024</p>
+</footer>
+
+</body>
+</html>
