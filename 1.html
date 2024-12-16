@@ -1,182 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stranger Things | Netflix</title>
+  <!-- Reset CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      color: #fff;
+      background-color: #000;
+    }
 
-        header {
-            background: linear-gradient(to right, #ece9e6, #ffffff);
-            padding: 20px 0;
-            text-align: center;
-        }
+    .container {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
 
-        header h1 {
-            font-size: 2.5rem;
-            margin: 10px 0;
-        }
+    .banner {
+      position: relative;
+      background: url('https://i.imgur.com/J1QX0cH.jpg') no-repeat center center/cover;
+      height: 600px;
+    }
 
-        header p {
-            font-size: 1.2rem;
-            color: #555;
-        }
+    .banner::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, transparent, #000);
+    }
 
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+    .content {
+      position: absolute;
+      bottom: 50px;
+      left: 30px;
+      max-width: 600px;
+      z-index: 10;
+    }
 
-        .portfolio-section {
-            text-align: center;
-            margin: 40px 0;
-        }
+    .content h1 {
+      font-size: 48px;
+      font-weight: 700;
+    }
 
-        .portfolio-section h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
+    .content p {
+      font-size: 16px;
+      line-height: 1.5;
+      margin: 20px 0;
+    }
 
-        .portfolio-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
+    .rating {
+      display: flex;
+      gap: 5px;
+      margin: 10px 0;
+    }
 
-        .card {
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
+    .rating i {
+      color: #ffcc00;
+    }
 
-        .card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
+    .btn-group {
+      display: flex;
+      gap: 15px;
+      margin-top: 15px;
+    }
 
-        .card h3 {
-            font-size: 1.5rem;
-            margin: 15px 0;
-            padding: 0 10px;
-        }
+    .btn {
+      padding: 12px 20px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      font-weight: 500;
+      text-decoration: none;
+      color: #fff;
+      display: inline-block;
+      font-size: 14px;
+    }
 
-        .card p {
-            padding: 0 10px;
-            color: #777;
-        }
+    .btn.primary {
+      background-color: #e50914;
+    }
 
-        .card button {
-            background-color: #6c63ff;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            margin: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
+    .btn.secondary {
+      border: 2px solid #fff;
+    }
 
-        .card button:hover {
-            background-color: #5753cc;
-        }
+    .popular {
+      padding: 20px 30px;
+    }
 
-        .cta-section {
-            background: #2d2d2d;
-            color: #fff;
-            padding: 40px 20px;
-            text-align: center;
-        }
+    .popular h2 {
+      margin: 0 0 20px;
+      font-size: 24px;
+    }
 
-        .cta-section h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
+    .popular .card-container {
+      display: flex;
+      gap: 15px;
+      overflow-x: auto;
+    }
 
-        .cta-section button {
-            background-color: #6c63ff;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
+    .popular .card {
+      flex: 0 0 150px;
+      background-color: #222;
+      border-radius: 6px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
 
-        .cta-section button:hover {
-            background-color: #5753cc;
-        }
+    .popular .card:hover {
+      transform: scale(1.1);
+    }
 
-        footer {
-            background: #121212;
-            color: #aaa;
-            padding: 20px 0;
-            text-align: center;
-        }
+    .popular .card img {
+      width: 100%;
+      display: block;
+    }
 
-        footer p {
-            margin: 0;
-        }
-    </style>
+    .age-badge {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      background-color: #e50914;
+      padding: 8px 12px;
+      font-size: 14px;
+      border-radius: 4px;
+    }
+  </style>
 </head>
 <body>
-
-<header>
-    <h1>Hello, I’m Rana Noman</h1>
-    <p>I’m a Frontend Web Developer and Creative Coder based in Manchester. I design and build beautifully simple websites.</p>
-</header>
-
-<div class="container">
-    <section class="portfolio-section">
-        <h2>Portfolio</h2>
-        <p>Here are some of my recent projects. Check them out!</p>
-        <div class="portfolio-cards">
-            <div class="card">
-                <img src="https://via.placeholder.com/300x200" alt="Project 1">
-                <h3>Project 1</h3>
-                <p>Description of the project.</p>
-                <button>View Details</button>
-            </div>
-            <div class="card">
-                <img src="https://via.placeholder.com/300x200" alt="Project 2">
-                <h3>Project 2</h3>
-                <p>Description of the project.</p>
-                <button>View Details</button>
-            </div>
-            <div class="card">
-                <img src="https://via.placeholder.com/300x200" alt="Project 3">
-                <h3>Project 3</h3>
-                <p>Description of the project.</p>
-                <button>View Details</button>
-            </div>
-            <div class="card">
-                <img src="https://via.placeholder.com/300x200" alt="Project 4">
-                <h3>Project 4</h3>
-                <p>Description of the project.</p>
-                <button>View Details</button>
-            </div>
+  <div class="container">
+    <div class="banner">
+      <div class="content">
+        <h1>Stranger Things</h1>
+        <p>In 1980s Indiana, a group of young friends witness supernatural forces and secret government exploits. As they search for answers, the children unravel a series of extraordinary mysteries.</p>
+        <div class="rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star-half-alt"></i>
+          <i class="far fa-star"></i>
         </div>
-    </section>
-</div>
+        <div class="btn-group">
+          <a href="#" class="btn primary">Stream Now</a>
+          <a href="#" class="btn secondary">All Episodes</a>
+        </div>
+      </div>
+      <div class="age-badge">16+</div>
+    </div>
 
-<section class="cta-section">
-    <h2>Do you have a Project Idea? Let’s discuss your project!</h2>
-    <button>Contact Me</button>
-</section>
-
-<footer>
-    <p>Created by Rana Noman | Copyright &copy; 2024</p>
-</footer>
-
+    <div class="popular">
+      <h2>Popular This Week</h2>
+      <div class="card-container">
+        <div class="card">
+          <img src="https://i.imgur.com/yQK3It3.jpg" alt="Breaking Bad">
+        </div>
+        <div class="card">
+          <img src="https://i.imgur.com/RDEhWhV.jpg" alt="The Rain">
+        </div>
+        <div class="card">
+          <img src="https://i.imgur.com/tME9FbM.jpg" alt="Life In A Year">
+        </div>
+        <div class="card">
+          <img src="https://i.imgur.com/6dOxyG1.jpg" alt="Money Heist">
+        </div>
+        <div class="card">
+          <img src="https://i.imgur.com/8IcBBFq.jpg" alt="Squid Game">
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
